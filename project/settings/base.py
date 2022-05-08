@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-import environ
 from pathlib import Path
 
+import environ
 
 env = environ.Env()
 
@@ -37,7 +37,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_CORE_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -45,6 +45,19 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 ]
+
+THIRD_PARTY_APPS = [
+    "rest_framework",
+]
+
+PROJECT_APPS = [
+    "api",
+    "apps.post",
+]
+
+
+INSTALLED_APPS = DJANGO_CORE_APPS + THIRD_PARTY_APPS + PROJECT_APPS
+
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
