@@ -5,7 +5,7 @@ services:
     image: postgres
     restart: always
     volumes:
-      - ${HOME}/Docker/Volumes/django-refs-demo/postgres/data:/var/lib/postgresql/data
+      - ${HOME}/docker/django-refs-demo-app/postgres/data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     env_file:
