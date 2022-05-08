@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres
+    restart: always
+    volumes:
+      - ${HOME}/Docker/Volumes/django-refs-demo/postgres/data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+
+  web:
+    build: .
+    restart: always
+    volumes:
+      - .:/web
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres

@@ -1,0 +1,10 @@
+# base
+django==4.0.4
+django-environ==0.8.1
+
+# rest-framework
+djangorestframework==3.13.1
+drf-yasg2==1.19.4
+
+# postgresql
+psycopg2==2.9.3
