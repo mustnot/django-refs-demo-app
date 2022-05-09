@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
 
-from common.models import TimeStampModel
+from apps.core.models import TimeStampModel
 
 
 class Category(TimeStampModel):
