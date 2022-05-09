@@ -4,6 +4,6 @@ from .serializers import PostOutputSerializer
 from apps.post.models import Post
 
 
-class PostViewsets(viewsets.ModelViewSet):
+class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.none()
     serializer_class = PostOutputSerializer

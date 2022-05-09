@@ -2,8 +2,9 @@ from django.urls import include
 from django.urls import path
 
 
-app_name = "api"
+app_name = "v1"
+
 
 urlpatterns = [
-    path("v1/", include("api.v1.urls")),
+    path("posts/", include("api.v1.post.urls")),
 ]
