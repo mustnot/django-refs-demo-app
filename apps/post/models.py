@@ -15,7 +15,7 @@ class Post(TimeStampModel):
     category = models.ForeignKey("Category", null=True, on_delete=models.SET_NULL, related_name="category")
     title = models.CharField(max_length=50)
     slug = models.SlugField(max_length=50)
-    tags = ArrayField(models.CharField(max_length=20), blank=True)
+    tags = ArrayField(models.CharField(max_length=20), blank=True, default=[])
     content = models.TextField(blank=True)
     published = models.BooleanField(default=False)
 
